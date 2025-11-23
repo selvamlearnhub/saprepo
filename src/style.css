@@ -1,0 +1,1041 @@
+/* Basic Reset & Body Styling */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling on the entire page */
+}
+body {
+  align-items: flex-start; /* Ensures items align to the start (top for row, left for column) */
+  background-color: #f3f4f6;
+  box-sizing: border-box;
+  color: #374151;
+  display: flex;
+  flex-direction: row; /* <--- IMPORTANT: Change this from 'column' to 'row' for desktop layout */
+  font-family: "Inter", sans-serif;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents body scroll, allowing specific content areas to scroll */
+}
+
+/* Main Navigation Panel */
+#main-nav {
+  background-color: #f9fafb;
+  border-bottom-right-radius: 2px;
+  border-right: 1px solid #e5e7eb;
+  border-top-right-radius: 2px;
+  box-sizing: border-box; /* Include padding in height calculation */
+  box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.1),
+    2px 0 4px -2px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%; /* Make nav take 100% of body's height */
+  overflow-y: auto; /* This makes the nav content scrollable */
+  padding: 24px;
+  width: 256px;
+  font-size: x-small;
+}
+
+/* Custom Scrollbar for Main Nav */
+#main-nav::-webkit-scrollbar {
+  width: 8px;
+}
+
+#main-nav::-webkit-scrollbar-track {
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+#main-nav::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border: 2px solid #f9fafb;
+  border-radius: 10px;
+}
+
+/* Site Logo */
+.site-logo {
+  margin-bottom: 24px;
+  margin-top: 4px;
+}
+
+.site-logo img {
+  display: block;
+  height: auto;
+  max-width: 25%;
+}
+
+/* Search Bar */
+.search-container {
+  border-bottom: 1px solid #eee; /* Separator, merged from later definition */
+  display: flex;
+  flex-direction: column; /* Stack input and select vertically */
+  gap: 5px; /* Space between input and select */
+  margin-bottom: 10px;
+  padding-bottom: 10px; /* Added from later definition */
+  font-size: x-small;
+}
+
+#search-input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: x-small;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+#search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  outline: none;
+}
+
+#search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Module Filter Dropdown */
+/* Module Filter Dropdown - FIXED POSITION */
+.module-filter,
+#module-filter {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #374151;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23374151' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  /* Remove any absolute positioning */
+  position: static !important;
+}
+
+.module-filter:hover,
+#module-filter:hover {
+  border-color: #3b82f6;
+}
+
+.module-filter:focus,
+#module-filter:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+
+.module-filter-dropdown:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  outline: none;
+}
+
+/* Search Results Area */
+#search-results {
+  background-color: #ffffff; /* Updated from #f9f9f9 */
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  display: none; /* Hide by default */
+  font-size: 0.875rem; /* Prioritized from earlier */
+  line-height: 1.5; /* Prioritized from earlier */
+  margin-top: 8px; /* Prioritized from earlier */
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 8px 0; /* Prioritized from earlier */
+}
+
+.search-results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-results-list li {
+  margin-bottom: 4px;
+}
+
+.search-results-list li a {
+  /* Merged from .search-result-link */
+  border-bottom: 1px solid #eee; /* Added separator */
+  border-radius: 4px;
+  color: #4b5563; /* Prioritized from #007bff */
+  display: block;
+  padding: 6px 10px; /* Prioritized from 8px 10px */
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.search-results-list li:last-child a {
+  border-bottom: none;
+}
+
+.search-results-list li a:hover {
+  background-color: #dbeafe; /* Prioritized from #e9f5ff */
+  color: #1d4ed8; /* Prioritized from #007bff */
+}
+
+/* Active style for search results */
+.search-result-link.active {
+  background-color: #bfdbfe; /* Prioritized from #e9f5ff */
+  color: #1e40af; /* Prioritized from #007bff */
+  font-weight: 600;
+}
+
+/* Module List */
+#module-list {
+  flex-grow: 1; /* Allows module list to take remaining space, enables its own scroll */
+  list-style: none;
+  margin: 0;
+  overflow-y: auto; /* Enable scrolling for the module list */
+  padding: 0;
+}
+
+#module-list li {
+  margin-bottom: 8px; /* Prioritized from 5px */
+}
+
+/* General Link Styling for modules & submenu items */
+#module-list li a,
+.module-submenu a,
+.flat-module-link {
+  /* Merged flat-module-link and module-submenu a */
+  border-radius: 6px; /* Prioritized from 4px */
+  color: #4b5563; /* Default text color for non-active links */
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#module-list li a:hover,
+.module-submenu a:hover,
+.flat-module-link:hover {
+  background-color: #dbeafe; /* Prioritized from #e0e0e0 */
+  color: #1d4ed8; /* Prioritized from #333 */
+}
+
+#module-list li a.active,
+.module-submenu a.active,
+.flat-module-link.active,
+.module-group-link.active {
+  /* Unified active styles */
+  background-color: #bfdbfe; /* Your desired active background */
+  color: #1e40af; /* Your desired active text color */
+  font-weight: 600;
+}
+
+/* Module Header (for drilldown items) */
+.module-header {
+  align-items: center;
+  background-color: #f0f0f0; /* Prioritized from #e0e0e0 */
+  border-bottom: 1px solid #ddd;
+  border-radius: 6px; /* Prioritized from 4px */
+  color: #374151; /* Default text color for header */
+  cursor: pointer;
+  display: flex;
+  font-size: 1em; /* Adjust this for text size */
+  font-weight: bold; /* Make header text bold */
+  justify-content: space-between;
+  padding: 7px 10px; /* Adjusted padding */
+  position: relative;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.module-header:hover {
+  background-color: #e5e7eb; /* Hover effect for the entire header area */
+}
+
+/* Class added by JavaScript when expanded */
+.module-header.expanded .arrow-icon {
+  transform: rotate(90deg); /* Rotates the arrow */
+}
+
+/* Styles for the main link text within the header (if it loads content) */
+.module-group-link {
+  color: #333; /* Default text color */
+  cursor: pointer; /* Explicitly set cursor for the link */
+  display: block; /* Ensures padding/margin work correctly */
+  flex-grow: 1; /* Allows the link to take up available space */
+  font-weight: 500;
+  overflow: hidden; /* Hide overflow */
+  padding-right: 10px; /* Space between text and arrow toggle */
+  text-decoration: none; /* Remove underline */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.module-group-link:hover {
+  color: #1d4ed8; /* Darker blue on hover for the text itself */
+}
+
+/* For module headers that are just labels, not links */
+.module-group-name {
+  color: #333;
+  display: block;
+  flex-grow: 1;
+  font-weight: 500;
+  overflow: hidden;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* cursor is default for span */
+}
+
+/* Styles for the clickable dropdown toggle area */
+.dropdown-toggle-area {
+  align-items: center;
+  border-radius: 4px; /* Slightly rounded corners */
+  cursor: pointer; /* Indicate it's clickable */
+  display: flex; /* Use flex to center the SVG */
+  flex-shrink: 0; /* Prevent it from shrinking */
+  height: 32px;
+  margin-right: -8px; /* Pull it slightly into the padding of the header */
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  width: 32px; /* Make it a decent sized square clickable area */
+}
+
+.dropdown-toggle-area:hover {
+  background-color: #d0d0d0; /* Highlight on hover */
+}
+
+/* Arrow Icon within the toggle area */
+.arrow-icon {
+  color: #555;
+  height: 20px; /* Prioritized from 16px */
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+  width: 20px; /* Prioritized from 16px */
+}
+
+/* Module Submenu */
+.module-submenu {
+  border-left: 1px solid #d1d5db;
+  display: none; /* Hidden by default, toggled by JS */
+  list-style: none;
+  margin: 4px 0 4px 24px; /* Prioritized from 5px 0 5px 20px */
+  padding: 0;
+}
+
+.module-submenu li {
+  margin-bottom: 4px;
+}
+
+/* Right Content Area */
+.content-area {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box; /* Include padding in height calculation */
+  flex: 1;
+  height: calc(
+    100% - 32px
+  ); /* 100% of body height minus top and bottom margin (16px * 2) */
+  line-height: 1.75;
+  margin: 16px;
+  overflow-y: auto; /* This makes the content area scrollable */
+  padding: 32px;
+}
+
+/* Content Area Typography (Prose-like styling) */
+.content-area h1 {
+  color: #1a202c;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.content-area h2 {
+  color: #2d3748;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.content-area p {
+  margin-bottom: 16px;
+}
+
+#author-reviewer-info {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  padding-bottom: 0; /* Added from later definition */
+  /*border-bottom: 1px solid #eee; /* Added from later definition */
+}
+#author-reviewer-info p {
+  margin: 5px 0; /* Added for consistency */
+}
+
+.prose-content ol,
+.prose-content ul {
+  list-style-position: inside;
+  margin-bottom: 16px; /* Prioritized from 1em */
+  padding-left: 0; /* Prioritized from 25px */
+}
+
+.prose-content ol {
+  list-style-type: decimal;
+}
+
+.prose-content ul {
+  list-style-type: disc;
+}
+
+.prose-content ol li,
+.prose-content ul li {
+  margin-bottom: 8px; /* Prioritized from 0.5em */
+}
+
+.prose-content p.disclaimer {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 24px;
+}
+
+/* General styles for messages */
+.error-message,
+.no-content-message {
+  background-color: #ffe0e0;
+  border: 1px solid #ff9999;
+  border-radius: 5px;
+  color: #ef4444; /* Prioritized from #d80000 */
+  font-size: 0.875rem;
+  margin: 10px;
+  padding: 8px 0; /* Prioritized from 15px */
+  text-align: center;
+}
+
+.no-results-message {
+  color: #6b7280; /* gray-500 from Tailwind */
+  font-size: 0.875rem;
+  padding: 8px 0;
+  text-align: center;
+}
+
+/* Prose Content (for loaded HTML) - Combined & Cleaned */
+.prose-content {
+  color: #333;
+  line-height: 1.6;
+}
+
+.prose-content h2,
+.prose-content h3,
+.prose-content h4 {
+  color: #2c3e50;
+  margin-bottom: 0.8em;
+  margin-top: 1.5em;
+}
+
+.prose-content p {
+  margin-bottom: 1em;
+}
+
+.prose-content pre {
+  background-color: #eef2f6;
+  border: 1px solid #d0d6de;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  overflow-x: auto;
+  padding: 15px; /* Base padding */
+  padding-top: 40px; /* Make space for the button at the top */
+  position: relative; /* Position relative for button positioning */
+}
+
+/* Ensure code block fills the pre area */
+.prose-content pre code {
+  background-color: transparent; /* Remove background, pre has it */
+  border-radius: 0;
+  display: block; /* Ensure code block takes full width */
+  font-size: 1em; /* Inherit from pre */
+  padding: 0; /* Remove default padding as pre has it */
+}
+
+.prose-content code {
+  /* Inline code */
+  background-color: #eef2f6;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  padding: 2px 4px;
+}
+
+/* NEW: Copy to Clipboard Button Styles */
+.copy-code-button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: bold;
+  opacity: 0.8; /* Slightly transparent when not hovered */
+  padding: 5px 10px;
+  position: absolute;
+  right: 10px; /* Distance from the right of the pre */
+  top: 10px; /* Distance from the top of the pre */
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.copy-code-button:hover {
+  background-color: #0056b3;
+  opacity: 1; /* Fully opaque on hover */
+}
+
+.copy-code-button.copied {
+  background-color: #28a745; /* Green when copied */
+  opacity: 1;
+}
+
+.copy-code-button.error {
+  background-color: #dc3545; /* Red on error */
+  opacity: 1;
+}
+
+/* NEW: Contribution Section Styles */
+.contribution-section {
+  background-color: #f0f8ff; /* Light blue background for emphasis */
+  border: 1px solid #d0e0ff;
+  border-radius: 8px;
+  margin-top: 20px; /* Space from search/filter */
+  padding: 15px;
+  border-top: 1px solid #eee; /* Separator */
+  text-align: center;
+}
+
+.contribution-section h3 {
+  color: #2c3e50;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.contribution-section p {
+  color: #555;
+  font-size: 0.85em;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.action-button {
+  background-color: #28a745; /* Green button */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 10px 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #218838;
+}
+
+.contact-info {
+  border-top: 1px dashed #e0e0e0;
+  margin-top: 15px;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.contact-info h4 {
+  color: #2c3e50;
+  font-size: 0.95em;
+  margin-bottom: 8px;
+}
+
+.contact-info p {
+  color: #666;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* NEW: Questions & Support Section Styles (for main content area) - Combined & Cleaned */
+.questions-support-section {
+  background-color: #f0f8ff;
+  border: 1px solid #d0e0ff;
+  border-radius: 8px;
+  color: #333;
+  margin-top: 0; /* The divider handles the top spacing now */
+  padding: 25px;
+  text-align: center;
+}
+
+.questions-support-section h2 {
+  color: #1a4d80; /* Darker blue for heading */
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.questions-support-section p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.questions-support-section .contact-info {
+  border-top: 1px dashed #c0d0f0;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+.questions-support-section .contact-info h4 {
+  color: #1a4d80;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.questions-support-section .contact-info p {
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.questions-support-section .contact-info a {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.questions-support-section .contact-info a:hover {
+  text-decoration: underline;
+}
+
+.questions-support-section .note {
+  color: #777;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+/* NEW: Style for the Content Divider */
+.content-divider {
+  background-color: #e0e0e0; /* Light gray line */
+  border-radius: 5px; /* Slightly rounded ends if the line is thick enough */
+  height: 1px; /* Thin line */
+  margin: 50px auto 24px auto; /* Top margin, horizontal auto-center, bottom margin */
+  width: 80%; /* Adjust width as needed, or 100% */
+}
+
+/* Custom Scrollbar Styling (Webkit browsers) */
+.custom-scroll::-webkit-scrollbar {
+  height: 8px; /* For horizontal scrollbar */
+  width: 8px; /* For vertical scrollbar */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  #main-nav {
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 0 0 8px 8px;
+    border-right: none;
+    height: auto;
+    max-height: 50vh;
+    padding: 16px;
+    width: 100%;
+  }
+
+  .content-area {
+    height: auto;
+    margin: 16px;
+    padding: 24px;
+  }
+
+  .site-logo {
+    margin-bottom: 16px;
+  }
+
+  .site-logo img {
+    display: block;
+    height: auto;
+    max-width: 10%;
+  }
+
+  .search-container {
+    margin-bottom: 16px;
+  }
+}
+
+/* NEW: Syntax Highlighting Styles for Code Keywords */
+.keyword {
+  font-weight: 600;
+  padding: 0 2px;
+}
+
+/* Declaration keywords (DATA, CLASS, INTERFACE, etc.) */
+.keyword-declaration {
+  color: #3400de;
+}
+
+/* Control flow keywords (IF, ELSE, CASE, etc.) */
+.keyword-control {
+  color: #0008ff;
+}
+
+/* Loop keywords (DO, WHILE, FOR, LOOP, etc.) */
+.keyword-loops {
+  color: #d946ef;
+}
+
+/* I/O keywords (WRITE, READ, DISPLAY, etc.) */
+.keyword-io {
+  color: #f59e0b;
+}
+
+/* Database keywords (SELECT, INSERT, UPDATE, DELETE, etc.) */
+.keyword-database {
+  color: #06b6d4;
+}
+
+/* Function/Method keywords (PERFORM, CALL, FUNCTION, etc.) */
+.keyword-functions {
+  color: #8b5cf6;
+}
+
+/* Modifiers (PUBLIC, PRIVATE, STATIC, ABSTRACT, etc.) */
+.keyword-modifiers {
+  color: #ec4899;
+}
+
+/* Methods/Builtins (console, print, len, etc.) */
+.keyword-methods,
+.keyword-builtins {
+  color: #059669;
+}
+
+/* Type keywords (int, string, boolean, etc.) */
+.keyword-types {
+  color: #1d4ed8;
+}
+
+/* Query keywords (SELECT, FROM, WHERE, JOIN, etc.) */
+.keyword-query {
+  color: #06b6d4;
+}
+
+/* DML keywords (INSERT, UPDATE, DELETE, etc.) */
+.keyword-manipulation {
+  color: #dc2626;
+}
+
+/* Aggregation keywords (GROUP, ORDER, LIMIT, etc.) */
+.keyword-aggregation {
+  color: #f97316;
+}
+
+/* Default keyword style (fallback) */
+.keyword-default {
+  color: #6366f1;
+}
+/* Iframe Content Frame Styles */
+#content-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background-color: #ffffff;
+}
+
+.content-body {
+  display: none; /* Hide the old content-body div if it still exists */
+}
+/* ===== RESIZABLE SPLITTER ===== */
+.splitter {
+  width: 5px;
+  background-color: #e5e7eb;
+  cursor: col-resize;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.splitter:hover {
+  background-color: #3b82f6;
+}
+
+.splitter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  right: -2px;
+  bottom: 0;
+  cursor: col-resize;
+}
+
+/* ===== NAVIGATION PANEL UPDATES ===== */
+#main-nav {
+  width: 256px;
+  min-width: 200px;
+  max-width: 600px;
+  transition: width 0.3s ease, margin-left 0.3s ease, transform 0.3s ease;
+  background-color: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  overflow-y: auto;
+  flex-shrink: 0;
+  height: 100vh;
+}
+
+#main-nav.hidden {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  transform: translateX(-100%);
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+/* ===== ICON BUTTONS ===== */
+.icon-button {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #374151;
+}
+
+.icon-button:hover {
+  background-color: #f3f4f6;
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.icon-button:active {
+  background-color: #e5e7eb;
+}
+
+/* ===== CONTENT AREA UPDATES ===== */
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  min-width: 0;
+  height: 100vh; /* Full viewport height */
+}
+
+.content-area.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.content-area.expanded .content-header {
+  display: none; /* Hide header in fullscreen mode */
+}
+.content-title-section {
+  flex: 1;
+}
+
+#content-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #1f2937;
+}
+
+.author-reviewer-info {
+  display: flex;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.author-reviewer-info p {
+  margin: 0;
+}
+
+.expand-btn {
+  margin-left: 16px;
+}
+
+.expand-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.content-area.expanded .expand-btn svg {
+  transform: rotate(180deg);
+}
+
+/* Content Frame */
+.content-frame {
+  width: 100%;
+  min-height: auto; /* CHANGED from 600px */
+  height: 100%;
+  flex: 1 1 auto; /* CHANGED from flex: 0 0 auto */
+  border: none;
+  background-color: #ffffff;
+}
+.content-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content-area.expanded .content-frame {
+  height: 100vh !important; /* Full viewport height when expanded */
+}
+
+/* ===== SHOW NAVIGATION BUTTON (when hidden) ===== */
+#show-nav-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  display: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+#show-nav-btn.visible {
+  display: flex;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  #main-nav {
+    width: 200px;
+  }
+  
+  .content-header {
+    padding: 16px;
+  }
+  
+  #content-title {
+    font-size: 1.5rem;
+  }
+}
+/* ===== FLOATING EXIT BUTTON (Fullscreen Mode) ===== */
+.floating-exit-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-exit-button:hover {
+  background-color: #f3f4f6;
+  border-color: #3b82f6;
+  color: #3b82f6;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.floating-exit-button:active {
+  background-color: #e5e7eb;
+  transform: scale(0.95);
+}
+
+.floating-exit-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Ensure floating button is visible above iframe */
+.content-area.expanded ~ .floating-exit-button {
+  display: flex;
+}

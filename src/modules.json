@@ -1,0 +1,17 @@
+[
+  {
+    "name": "BP - Data Model & Table Mapping",
+    "id": "01.BP-DataModel&TableMapping",
+    "author": "Selvam Ravikumar",
+    "reviewer": "Selvam Ravikumar",
+    "contentPath": "src/content/SAP_MDG_BP_Mapping.html",
+    "keywords": [
+      "BP data Model",
+      "Business Partner",
+      "BP tables",
+      "Customer",
+      "Vendor",
+      "Supplier"
+    ]
+  }
+]

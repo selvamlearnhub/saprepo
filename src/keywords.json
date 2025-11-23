@@ -1,0 +1,486 @@
+{
+  "colors": {
+    "declaration": "#3400de",
+    "control": "#0008ff",
+    "loops": "#d946ef",
+    "io": "#f59e0b",
+    "database": "#06b6d4",
+    "functions": "#8b5cf6",
+    "modifiers": "#ec4899",
+    "methods": "#059669",
+    "builtins": "#059669",
+    "types": "#1d4ed8",
+    "query": "#06b6d4",
+    "manipulation": "#dc2626",
+    "aggregation": "#f97316",
+    "default": "#6366f1"
+  },
+  "languages": {
+    "abap": {
+      "name": "ABAP",
+      "syntax": {
+        "lineComment": [
+          "\""
+        ],
+        "blockComment": [],
+        "stringDelimiters": [
+          "'"
+        ],
+        "stringEscape": "double"
+      },
+      "declaration": [
+        "DATA",
+        "REPORT",
+        "PROGRAM",
+        "CLASS",
+        "INTERFACE",
+        "CONSTANTS",
+        "PARAMETERS",
+        "SELECT-OPTIONS",
+        "TYPES",
+        "DEFINE",
+        "INCLUDE"
+      ],
+      "control": [
+        "IF",
+        "ELSE",
+        "ELSEIF",
+        "ENDIF",
+        "CASE",
+        "WHEN",
+        "ENDCASE",
+        "DO",
+        "ENDDO",
+        "WHILE",
+        "ENDWHILE",
+        "LOOP",
+        "ENDLOOP",
+        "FOR",
+        "ENDFOR"
+      ],
+      "loops": [
+        "LOOP",
+        "ENDLOOP",
+        "DO",
+        "ENDDO",
+        "WHILE",
+        "ENDWHILE",
+        "FOR",
+        "ENDFOR"
+      ],
+      "io": [
+        "WRITE",
+        "READ",
+        "OPEN",
+        "CLOSE",
+        "GET",
+        "PUT",
+        "ACCEPT",
+        "DISPLAY",
+        "PRINT"
+      ],
+      "database": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "MODIFY",
+        "APPEND",
+        "COLLECT",
+        "INTO",
+        "FROM",
+        "WHERE",
+        "ORDER",
+        "GROUP",
+        "HAVING"
+      ],
+      "functions": [
+        "PERFORM",
+        "CALL",
+        "FUNCTION",
+        "ENDFUNCTION",
+        "FORM",
+        "ENDFORM",
+        "METHOD",
+        "ENDMETHOD"
+      ],
+      "modifiers": [
+        "PUBLIC",
+        "PRIVATE",
+        "PROTECTED",
+        "STATIC",
+        "ABSTRACT",
+        "FINAL",
+        "VALUE",
+        "REFERENCE",
+        "OPTIONAL",
+        "DEFAULT"
+      ],
+      "colors": {
+        "comment": "#6b7280",
+        "control": "#0008ff"
+      }
+    },
+    "javascript": {
+      "name": "JavaScript",
+      "syntax": {
+        "lineComment": [
+          "//"
+        ],
+        "blockComment": [
+          {
+            "start": "/*",
+            "end": "*/"
+          }
+        ],
+        "stringDelimiters": [
+          "'",
+          "\"",
+          "`"
+        ],
+        "stringEscape": "backslash"
+      },
+      "declaration": [
+        "var",
+        "let",
+        "const",
+        "function",
+        "class",
+        "async",
+        "await",
+        "import",
+        "export",
+        "default"
+      ],
+      "control": [
+        "if",
+        "else",
+        "switch",
+        "case",
+        "break",
+        "continue",
+        "return",
+        "throw",
+        "try",
+        "catch",
+        "finally"
+      ],
+      "loops": [
+        "for",
+        "while",
+        "do",
+        "foreach",
+        "map",
+        "filter",
+        "reduce"
+      ],
+      "types": [
+        "boolean",
+        "number",
+        "string",
+        "object",
+        "array",
+        "null",
+        "undefined"
+      ],
+      "methods": [
+        "console",
+        "setTimeout",
+        "setInterval",
+        "addEventListener",
+        "querySelector",
+        "getElementById"
+      ],
+      "colors": {
+        "comment": "#6b7280",
+        "string": "#0ea5a4",
+        "declaration": "#0ea5a4",
+        "control": "#2563eb"
+      }
+    },
+    "python": {
+      "name": "Python",
+      "syntax": {
+        "lineComment": [
+          "#"
+        ],
+        "blockComment": [],
+        "stringDelimiters": [
+          "'''",
+          "\"\"\"",
+          "'",
+          "\""
+        ],
+        "stringEscape": "none"
+      },
+      "declaration": [
+        "def",
+        "class",
+        "import",
+        "from",
+        "as",
+        "return",
+        "yield",
+        "lambda",
+        "global",
+        "nonlocal"
+      ],
+      "control": [
+        "if",
+        "elif",
+        "else",
+        "for",
+        "while",
+        "break",
+        "continue",
+        "pass",
+        "raise",
+        "try",
+        "except",
+        "finally"
+      ],
+      "loops": [
+        "for",
+        "while",
+        "break",
+        "continue"
+      ],
+      "builtins": [
+        "print",
+        "len",
+        "range",
+        "enumerate",
+        "zip",
+        "map",
+        "filter",
+        "sorted",
+        "reversed"
+      ],
+      "types": [
+        "int",
+        "float",
+        "str",
+        "list",
+        "dict",
+        "set",
+        "tuple",
+        "bool"
+      ],
+      "colors": {
+        "comment": "#6b7280",
+        "string": "#0ea5a4",
+        "declaration": "#0f172a",
+        "control": "#1d4ed8"
+      }
+    },
+    "sql": {
+      "name": "SQL",
+      "syntax": {
+        "lineComment": [
+          "--"
+        ],
+        "blockComment": [
+          {
+            "start": "/*",
+            "end": "*/"
+          }
+        ],
+        "stringDelimiters": [
+          "'"
+        ],
+        "stringEscape": "backslash"
+      },
+      "declaration": [
+        "CREATE",
+        "ALTER",
+        "DROP",
+        "DECLARE",
+        "DEFINE",
+        "TABLE",
+        "VIEW",
+        "INDEX",
+        "PROCEDURE",
+        "FUNCTION"
+      ],
+      "control": [
+        "IF",
+        "ELSE",
+        "CASE",
+        "WHEN",
+        "BEGIN",
+        "END",
+        "THEN"
+      ],
+      "query": [
+        "SELECT",
+        "FROM",
+        "WHERE",
+        "JOIN",
+        "INNER",
+        "LEFT",
+        "RIGHT",
+        "FULL",
+        "ON",
+        "AND",
+        "OR",
+        "NOT",
+        "IN",
+        "EXISTS",
+        "BETWEEN",
+        "LIKE"
+      ],
+      "manipulation": [
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "MERGE",
+        "COPY",
+        "INTO",
+        "VALUES",
+        "SET"
+      ],
+      "aggregation": [
+        "GROUP",
+        "BY",
+        "HAVING",
+        "ORDER",
+        "ASC",
+        "DESC",
+        "LIMIT",
+        "OFFSET"
+      ]
+    },
+    "java": {
+      "name": "Java",
+      "syntax": {
+        "lineComment": [
+          "//"
+        ],
+        "blockComment": [
+          {
+            "start": "/*",
+            "end": "*/"
+          }
+        ],
+        "stringDelimiters": [
+          "'",
+          "\""
+        ],
+        "stringEscape": "backslash"
+      },
+      "declaration": [
+        "class",
+        "interface",
+        "enum",
+        "abstract",
+        "final",
+        "static",
+        "public",
+        "private",
+        "protected",
+        "package",
+        "import"
+      ],
+      "control": [
+        "if",
+        "else",
+        "switch",
+        "case",
+        "for",
+        "while",
+        "do",
+        "break",
+        "continue",
+        "return",
+        "throw",
+        "try",
+        "catch",
+        "finally"
+      ],
+      "types": [
+        "int",
+        "long",
+        "double",
+        "float",
+        "boolean",
+        "char",
+        "byte",
+        "short",
+        "void",
+        "String"
+      ],
+      "modifiers": [
+        "public",
+        "private",
+        "protected",
+        "static",
+        "final",
+        "abstract",
+        "synchronized"
+      ]
+    },
+    "csharp": {
+      "name": "C#",
+      "syntax": {
+        "lineComment": [
+          "//"
+        ],
+        "blockComment": [
+          {
+            "start": "/*",
+            "end": "*/"
+          }
+        ],
+        "stringDelimiters": [
+          "'",
+          "\""
+        ],
+        "stringEscape": "backslash"
+      },
+      "declaration": [
+        "class",
+        "struct",
+        "interface",
+        "enum",
+        "namespace",
+        "using",
+        "public",
+        "private",
+        "protected",
+        "internal",
+        "abstract",
+        "sealed",
+        "partial"
+      ],
+      "control": [
+        "if",
+        "else",
+        "switch",
+        "case",
+        "for",
+        "foreach",
+        "while",
+        "do",
+        "break",
+        "continue",
+        "return",
+        "throw",
+        "try",
+        "catch",
+        "finally"
+      ],
+      "types": [
+        "int",
+        "long",
+        "double",
+        "float",
+        "bool",
+        "string",
+        "char",
+        "byte",
+        "object",
+        "var"
+      ]
+    }
+  }
+}

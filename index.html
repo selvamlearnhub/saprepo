@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAP Documentation Repository</title>
+  <link rel="stylesheet" type="text/css" href="src/style.css" />
+</head>
+
+<body>
+
+  <!-- Main Navigation Panel -->
+  <nav id="main-nav">
+    <div class="nav-header">
+      <img src="src/logo/SAPRepo.png" alt="Logo" class="logo">
+
+      <!-- Toggle Navigation Button -->
+      <button id="toggle-nav-btn" class="icon-button" title="Hide Navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Search Bar -->
+    <input type="text" id="search-input" placeholder="Search document" class="search-input">
+
+    <!-- Module Filter Dropdown -->
+    <select id="module-filter" class="module-filter">
+      <option value="All">All</option>
+    </select>
+
+    <!-- Module List (Navigation Tree) -->
+    <ul id="module-list" class="module-list"></ul>
+
+    <!-- Search Results Dropdown -->
+    <div id="search-results" class="search-results-dropdown"></div>
+  </nav>
+
+  <!-- Resizable Splitter -->
+  <div id="splitter" class="splitter"></div>
+
+  <!-- Content Area -->
+  <div class="content-area" id="content-area-wrapper">
+
+    <!-- Content Header with Expand Button -->
+    <div class="content-header">
+      <div class="content-title-section">
+        <h2 id="content-title">Welcome</h2>
+        <div id="author-reviewer-info" class="author-reviewer-info"></div>
+      </div>
+
+      <!-- Expand/Fullscreen Button -->
+      <button id="expand-content-btn" class="icon-button expand-btn" title="Expand Content">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content Frame (Iframe) -->
+    <iframe id="content-frame" class="content-frame"></iframe>
+  </div>
+  <script src="src/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+/* src/content/shared-content-styles.css */
+
+/* Base content styles */
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    line-height: 1.75;
+    color: #333;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    margin-bottom: 0.8em;
+    margin-top: 1.5em;
+}
+
+h1 { font-size: 2.25rem; font-weight: 800; }
+h2 { font-size: 1.5rem; font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Code block styles */
+pre {
+    background-color: #eef2f6;
+    border: 1px solid #d0d6de;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    overflow-x: auto;
+    padding: 15px;
+    padding-top: 40px; /* Space for copy button */
+    position: relative;
+}
+
+pre code {
+    background-color: transparent;
+    border-radius: 0;
+    display: block;
+    font-size: 1em;
+    padding: 0;
+}
+
+code {
+    background-color: #eef2f6;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    padding: 2px 4px;
+}
+
+/* Copy button styles */
+.copy-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    opacity: 0.8;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #0056b3;
+    opacity: 1;
+}
+
+.copy-button.copied {
+    background-color: #28a745;
+    opacity: 1;
+}
+
+.copy-button.error {
+    background-color: #dc3545;
+    opacity: 1;
+}
+
+/* Syntax highlighting styles */
+.keyword { font-weight: 600; padding: 0 2px; }
+.keyword-declaration { color: #3400de; }
+.keyword-control { color: #0008ff; }
+.keyword-loops { color: #d946ef; }
+.keyword-io { color: #f59e0b; }
+.keyword-database { color: #06b6d4; }
+.keyword-functions { color: #8b5cf6; }
+.keyword-modifiers { color: #ec4899; }
+.keyword-methods, .keyword-builtins { color: #059669; }
+.keyword-types { color: #1d4ed8; }
+.keyword-query { color: #06b6d4; }
+.keyword-manipulation { color: #dc2626; }
+.keyword-aggregation { color: #f97316; }
+.keyword-default { color: #6366f1; }
